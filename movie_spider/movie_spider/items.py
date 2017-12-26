@@ -8,7 +8,7 @@
 import scrapy
 
 
-class WoodenrobotItem(scrapy.Item):
+class MovieSpiderItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
