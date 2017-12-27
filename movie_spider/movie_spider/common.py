@@ -8,4 +8,4 @@ import logging
 
 from toolkit import logkit
 
-logger = logkit.get_logger(logger_name='movie_spider', log_level=logging.INFO)
+logger = logkit.get_logger(logger_name='movie_spider', log_level=logging.DEBUG, print_level=logging.DEBUG)
