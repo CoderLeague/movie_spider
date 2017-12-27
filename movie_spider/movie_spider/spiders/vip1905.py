@@ -10,6 +10,6 @@ class Vip1905Spider(scrapy.Spider):
     start_urls = ['http://vip.1905.com/']
 
     def parse(self, response):
-        # logger.info(str(str(response.url)))
+        logger.info(str(str(response.url)))
         print('DEBUG DEBUG DEBUG:',str(response.body))
         pass
