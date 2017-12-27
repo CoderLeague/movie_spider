@@ -2,3 +2,7 @@
 \.idea/
 
 *.pyc
+
+movie_spider/movie_spider/\.pydevproject
+
+movie_spider/movie_spider/\.project
