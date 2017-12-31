@@ -14,3 +14,7 @@ movie_spider/movie_spider/.project
 *.pyc
 
 movie_spider/.idea/
+
+movie_spider/\.project
+
+movie_spider/\.pydevproject
