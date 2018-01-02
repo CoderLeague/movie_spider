@@ -1,2 +1,20 @@
 
-\.idea/
+/.idea/
+
+*.pyc
+
+movie_spider/movie_spider/.pydevproject
+
+movie_spider/movie_spider/.project
+
+*.lock
+
+*.log
+
+*.pyc
+
+movie_spider/.idea/
+
+movie_spider/\.project
+
+movie_spider/\.pydevproject
