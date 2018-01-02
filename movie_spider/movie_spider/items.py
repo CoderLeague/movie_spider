@@ -9,9 +9,34 @@ import scrapy
 
 
 class MovieSpiderItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+    """
+    电影的基本信息
+    """
     pass
+
+
+class BaseMovieItem(MovieSpiderItem):
+    """
+    基本赚取
+    """
+    title        = scrapy.Field()  # 片名
+    protagonist  = scrapy.Field()  # 主演
+    type         = scrapy.Field()  # 类型
+    director     = scrapy.Field()  # 导演
+    description  = scrapy.Field()  # 简介
+    show_year    = scrapy.Field()  # 年份
+    region       = scrapy.Field()  # 地区
+    lang         = scrapy.Field()  # 语言
+
+
+
+class Liliyy123Item(BaseMovieItem):
+    """
+    莉莉影院
+    """
+    alias     = scrapy.Field()  # 别名
+    cover_url = scrapy.Field()  # 封面链接
+    play_url  = scrapy.Field()  # 页面链接
 
 
 class CollectipsIpItem(scrapy.Item):
