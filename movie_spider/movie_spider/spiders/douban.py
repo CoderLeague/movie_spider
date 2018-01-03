@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
+from movie_spider.common import logger
+
 
 class DoubanSpider(scrapy.Spider):
     name = 'douban'
@@ -8,5 +10,5 @@ class DoubanSpider(scrapy.Spider):
     start_urls = ['http://movie.douban.com/']
 
     def parse(self, response):
-        print response.body
+        logger.info(str(response.body))
         pass

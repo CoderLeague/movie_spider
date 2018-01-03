@@ -1,0 +1,51 @@
+[
+	{
+		"id"     : "0",
+		"name"   : "莉莉影院",
+		"domain" : "liliyy123.com" ,
+		"url"    : "http://www.liliyy123.com"
+	},
+	{
+		"id"     : "1",
+		"name"   : "唯爱痞",
+		"domain" : "vip-free.com" ,
+		"url"    : "http://www.vip-free.com"
+	},
+	{
+		"id"     : "2",
+		"name"   : "小马影院",
+		"domain" : "efx6.cn" ,
+		"url"    : "http://www.efx6.cn"
+	},
+	{
+		"id"     : "3",
+		"name"   : "全民影院",
+		"domain" : "anyunjun.cn" ,
+		"url"    : "http://www.anyunjun.cn"
+	},
+	{
+		"id"     : "4",
+		"name"   : "在线电影网",
+		"domain" : "zxkk5.com" ,
+		"url"    : "http://www.zxkk5.com"
+	},
+	{
+		"id"     : "5",
+		"name"   : "天龙高清影视",
+		"domain" : "76mao.com" ,
+		"url"    : "http://www.76mao.com"
+	},
+	{
+		"id"     : "6",
+		"name"   : "西瓜电影",
+		"domain" : "xigua110.com" ,
+		"url"    : "https://www.xigua110.com"
+	},
+	{
+		"id"     : "7",
+		"name"   : "战地影院s",
+		"domain" : "zhandi.cc" ,
+		"url"    : "http://www.zhandi.cc"
+	}
+]
+
