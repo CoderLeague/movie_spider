@@ -45,28 +45,39 @@ class LiliSpider(scrapy.Spider):
     def item_parse(self, response):
         # 解析影片介绍页面
         
-        
         link_list   = response.xpath("(.//div[@class='videourl clearfix'])[1]/ul/li/a/@href").extract()
         title_list  = response.xpath("(.//div[@class='videourl clearfix'])[1]/ul/li/a/@title").extract() # 正片
         title       = response.xpath(".//dt[@class='name']/text()").extract()[0]
         protagonist = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        mtype       = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        director    = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        description = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        show_year   = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        region      = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        lang        = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        cover_url   = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+#         play_url    = response.xpath(".//div[@class='ct-c']/dt[1]/text()").extract()
+        
+        
 #         protagonist = response.xpath().extract()
         
         logger.info(protagonist)
-        logger.info("titile %s, link %s " % (str(len(title_list)), str(len(title_list))))
+        logger.info("titile %s, link %s " % (str(len(title_list)), str(len(link_list))))
         
         for i in range(len(title_list)):
             logger.info("title index %d" % (i,))
+            logger.info("title value %s" % (title_list[i]))
             item = Liliyy123Item()
+            
             item['title']       = title
             item['protagonist'] = protagonist
-            item['type']        = title
-            item['director']    = title
-            item['description'] = title
-            item['show_year']   = title
-            item['region']      = title
-            item['lang']        = title
-            item['cover_url']   = title
+            item['type']        = mtype
+            item['director']    = director
+            item['description'] = description
+            item['show_year']   = show_year
+            item['region']      = region
+            item['lang']        = lang
+            item['cover_url']   = cover_url
             item['play_url']    = self.base_domain + link_list[i]
             
 #             logger.info(item)
