@@ -1,8 +1,8 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 # @File    : logkit.py
 # @Brief   :
-# @Author  : zhongliang@codenewman.com
+# @Author  : jiangzhongliang@liquidnetwork.com
 # @Time    : 2017/8/30 下午5:35
 
 import os
@@ -12,6 +12,9 @@ from cloghandler import ConcurrentRotatingFileHandler
 logger_dict = {}
 
 def get_logger(logger_name, log_level=logging.WARNING, print_level=logging.WARNING):
+    """
+    获取日志操作对象
+    """
     if logger_name in logger_dict:
         return logger_dict[logger_name]
 
@@ -24,8 +27,7 @@ def get_logger(logger_name, log_level=logging.WARNING, print_level=logging.WARNI
 
 def create_concurrent_logger(logger_name, log_level=logging.WARNING, print_level=logging.WARNING):
     """
-    .创建一个多进程使用的日志
-    @author: liqing@kavout.com
+    创建一个多进程使用的日志
     """
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     log_path = os.path.join(base_dir, "logs")
@@ -38,7 +40,7 @@ def create_concurrent_logger(logger_name, log_level=logging.WARNING, print_level
     # 将日志写入日志文件中
     rotate_handler = ConcurrentRotatingFileHandler(logfile, "a", filesize, 5, encoding="utf-8")
     rotate_handler.setLevel(log_level)
-    fmt = "[%(asctime)-15s %(levelname)-8s %(filename)s:%(lineno)+4d] [%(process)-6s]  %(message)s"
+    fmt = "[%(asctime)-15s %(levelname)-8s %(filename)s:%(lineno)3d] [%(process)s] %(message)s"
     datefmt = "%a, %d %b %Y %H:%M:%S"
     formatter = logging.Formatter(fmt, datefmt)
     rotate_handler.setFormatter(formatter)

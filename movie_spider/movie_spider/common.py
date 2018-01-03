@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
-# Define here the models for your scraped items
-#
-# See documentation in:
-# http://doc.scrapy.org/en/latest/topics/items.html
+# 这里定义通用变量
 import logging
 
 from toolkit import logkit
 
-logger = logkit.get_logger(logger_name='movie_spider', log_level=logging.DEBUG, print_level=logging.WARNING)
+logger = logkit.get_logger(logger_name='movie_spider', log_level=logging.DEBUG, print_level=logging.ERROR)
+
+
 
