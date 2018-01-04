@@ -14,10 +14,8 @@ from movie_spider.common import logger
 
 class MovieSpiderPipeline(object):
     def process_item(self, item, spider):
-        logger.info(str(item))
-
+#         logger.info(str(item))
         return item
-
 
 
 
@@ -29,6 +27,8 @@ class MongoDBPipeline(object):
         )
         db=connection[settings['MONGODB_DB']]
         self.collection=db[settings['MONGODB_COLLECTION']]
+
+
     def process_item(self,item,spider):
         valid=True
         for data in item:
@@ -39,6 +39,8 @@ class MongoDBPipeline(object):
             self.collection.insert(dict(item))
             log.msg('question added to mongodb database!',
                     level=log.DEBUG,spider=spider)
+            
+        logger.info(u'存入数据成功')
         return item
 
 

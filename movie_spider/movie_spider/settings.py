@@ -71,7 +71,7 @@ ROBOTSTXT_OBEY = True
 #}
 
 ITEM_PIPELINES = {
-   'stack.pipelines.MongoDBPipeline': 300,
+   'movie_spider.pipelines.MongoDBPipeline': 300,
 }
 
 MONGODB_SERVER     = ONLINE_MONGODB_SERVER

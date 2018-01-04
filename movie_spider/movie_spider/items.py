@@ -19,6 +19,7 @@ class BaseMovieItem(MovieSpiderItem):
     """
     基本赚取
     """
+    item_id      = scrapy.Field()  # 站内唯一ID
     title        = scrapy.Field()  # 片名
     protagonist  = scrapy.Field()  # 主演
     type         = scrapy.Field()  # 类型
@@ -27,7 +28,18 @@ class BaseMovieItem(MovieSpiderItem):
     show_year    = scrapy.Field()  # 年份
     region       = scrapy.Field()  # 地区
     lang         = scrapy.Field()  # 语言
+    site_url     = scrapy.Field()  # 站点域名
 
+class VipfreeItem(BaseMovieItem):
+    """
+    唯爱痞电影网
+    """
+    cover_url = scrapy.Field()  # 封面链接
+    play_url  = scrapy.Field()  # 播放链接
+    
+    def __init__(self):
+        super(VipfreeItem, self).__init__()
+        self['site_url'] = 'vip-free.com'
 
 
 class Liliyy123Item(BaseMovieItem):

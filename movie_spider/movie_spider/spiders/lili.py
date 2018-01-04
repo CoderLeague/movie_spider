@@ -4,11 +4,11 @@ from movie_spider.items import Liliyy123Item
 from movie_spider.common import logger
 
 
-headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Mobile Safari/537.36',
-            'Accept'   : 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+headers = {'User-Agent'      : 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Mobile Safari/537.36',
+            'Accept'         : 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
             'Accept-Encoding': 'gzip, deflate, br',
-            'Referer':'http://www.liliyy123.com/'}
+            'Referer'        : 'http://www.liliyy123.com/'}
 
 class LiliSpider(scrapy.Spider):
     name = 'lili'
