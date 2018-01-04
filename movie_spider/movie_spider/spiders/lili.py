@@ -30,11 +30,11 @@ class LiliSpider(scrapy.Spider):
         # 分页执行
         
         # 找出所有影片链接
-        detail_link_list = response.xpath(".//div[@class='index-tj-l']/ul/li/a/@href").extract()
+        detail_link_list = response.xpath(".//div[@class='index-tj-l']/ul/li/a/@href").extract() # 获取当前页所有详情链接
         for detail_link in detail_link_list:
             yield scrapy.Request(self.base_domain + detail_link, headers=headers, callback=self.item_parse)
             
-        # 找下一页
+        # 寻找下一页按钮
         temp = response.xpath(".//a[@class='pagelink_a']/@href").extract()
         link = temp[-2]
         tar = link.split("-")[-1]
@@ -63,6 +63,10 @@ class LiliSpider(scrapy.Spider):
         
         logger.info(protagonist)
         logger.info("titile %s, link %s " % (str(len(title_list)), str(len(link_list))))
+        
+        
+        
+        
         
         for i in range(len(title_list)):
             logger.info("title index %d" % (i,))

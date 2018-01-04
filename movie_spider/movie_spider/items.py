@@ -34,9 +34,10 @@ class Liliyy123Item(BaseMovieItem):
     """
     莉莉影院
     """
+    
     alias     = scrapy.Field()  # 别名
     cover_url = scrapy.Field()  # 封面链接
-    play_url  = scrapy.Field()  # 页面链接
+    play_url  = scrapy.Field()  # 播放链接
 
 
 class CollectipsIpItem(scrapy.Item):
