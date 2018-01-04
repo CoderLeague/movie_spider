@@ -1,0 +1,13 @@
+部署服务器
+server1.liquidnetwork.com
+用户名： op
+密码    Abcd1@#$
+
+这个mongo只能在server1上访问， 外网访问不了
+mongo 172.17.33.176:30001/feed -u liquid -p n3tw0rk
+
+创建一个collections
+命名 capture_mysite_video
+
+创建时,可能需要估算一下大小
+设置一下 capped 字段
