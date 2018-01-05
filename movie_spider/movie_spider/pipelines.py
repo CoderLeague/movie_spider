@@ -12,10 +12,10 @@ from scrapy import log
 from movie_spider.common import logger
 
 
-class MovieSpiderPipeline(object):
-    def process_item(self, item, spider):
-#         logger.info(str(item))
-        return item
+# class MovieSpiderPipeline(object):
+#     def process_item(self, item, spider):
+# #         logger.info(str(item))
+#         return item
 
 
 

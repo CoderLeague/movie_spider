@@ -60,11 +60,11 @@ class VipfreeSpider(scrapy.Spider):
         values = soup.find('a')
         
         item = VipfreeItem()
-        item['item_id']     = response.url.split('/')[-1].split('.')[-2]
-        item['title']       = values['title']
-        item['cover_url']   = values['src']
-        item['play_url']    = response.url
-        item['description'] = response.xpath('//*[@id="list3"]/div/div/text()').extract()[-1]
+        item['item_id']       = response.url.split('/')[-1].split('.')[-2]
+        item['title']         = values['title']
+        item['cover_images'].append(values['src'])
+        item['content_url']   = response.url
+        item['description']   = response.xpath('//*[@id="list3"]/div/div/text()').extract()[-1]
 
         logger.info(item['title'])
         logger.info(item['description'])
