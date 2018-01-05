@@ -16,7 +16,7 @@ ONLINE_MONGODB_COLLECTION = "capture_mysite_video"
 
 # debug configure
 
-ONLINE_MONGODB_SERVER     = "127.0.0.1"
-ONLINE_MONGODB_PORT       = 27017
-ONLINE_MONGODB_DB         = "local"
-ONLINE_MONGODB_COLLECTION = "capture_mysite_video"
+# ONLINE_MONGODB_SERVER     = "127.0.0.1"
+# ONLINE_MONGODB_PORT       = 27017
+# ONLINE_MONGODB_DB         = "local"
+# ONLINE_MONGODB_COLLECTION = "capture_mysite_video"
