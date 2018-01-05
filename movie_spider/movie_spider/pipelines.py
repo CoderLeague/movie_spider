@@ -22,8 +22,10 @@ from movie_spider.common import logger
 class MongoDBPipeline(object):
     def __init__(self):
         connection=pymongo.MongoClient(
-            settings['MONGODB_SERVER'],
-            settings['MONGODB_PORT']
+            host     = settings['MONGODB_SERVER'],
+            port     = settings['MONGODB_PORT'],
+            username = settings['MONGODB_USERNAME'],
+            password = settings['MONGODB_PASSWORD']
         )
         db=connection[settings['MONGODB_DB']]
         self.collection=db[settings['MONGODB_COLLECTION']]
