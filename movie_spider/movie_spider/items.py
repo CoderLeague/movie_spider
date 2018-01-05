@@ -54,14 +54,14 @@ class BaseMovieItem(MovieSpiderItem):
         self['source']        =      "c.l.a.webview.msite.video"
         self['sub_source']    =      ""
         self['site_url']      =      ""
-        self['director']      =      []
-        self['actor_list']    =      []
+        self['director']      =      ""
+        self['actor_list']    =      ""
         self['show_year']     =      0
         self['item_catagory'] =      ""
         self['duration']      =      ""
         self['item_id']       =      ""
         self['eposide_num']   =      ""
-        self['free_tag']      =      False
+        self['free_tag']      =      "付费"      
         self['title']         =      ""
         self['description']   =      ""
         self['cover_images']  =      []
@@ -76,7 +76,7 @@ class BaseMovieItem(MovieSpiderItem):
         self['region']        =      ""
         self['type']          =      ""
         self['sub_type']      =      "video"
-        self['channel']       =      ['movie',]
+        self['channel']       =      "movie"
         self['sub_channel']   =      ""
 
 
@@ -90,7 +90,7 @@ class VipfreeItem(BaseMovieItem):
         self['sub_source']    =      "weiaipidianyingwang"
         self['site_url']      =      'vip-free.com'
         self['free_tag']      =      True
-        self['last_update_time']  =  time.time()
+        self['last_update_time']  =  int(time.time())
 
 
 class Liliyy123Item(BaseMovieItem):
