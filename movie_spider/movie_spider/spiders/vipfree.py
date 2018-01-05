@@ -58,13 +58,28 @@ class VipfreeSpider(scrapy.Spider):
         detail = response.meta['detail']
         soup = BeautifulSoup(detail, "lxml")
         values = soup.find('a')
+        cover_image = {
+            "img"   : values['src'],
+            "width" : 0,
+            "heigh" : 0
+            }
+        video_src_list = response.xpath('//*[@id="playlist1"]/ul/li').extract()
         
         item = VipfreeItem()
+        # 站内唯一标识
         item['item_id']       = response.url.split('/')[-1].split('.')[-2]
+        # 影片标题
         item['title']         = values['title']
-        item['cover_images'].append(values['src'])
+        # 图片信息
+        item['cover_images'].append(cover_image)
+        # 播放页链接
         item['content_url']   = response.url
+        # 介绍
         item['description']   = response.xpath('//*[@id="list3"]/div/div/text()').extract()[-1]
+        # 播放地址数
+        item['video_src_cnt'] = len(video_src_list)
+        # 图片数量
+        item['cover_img_cnt'] = 1
 
         logger.info(item['title'])
         logger.info(item['description'])
