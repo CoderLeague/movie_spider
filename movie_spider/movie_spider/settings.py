@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from configure.setting import ONLINE_MONGODB_SERVER, ONLINE_MONGODB_PORT,\
-    ONLINE_MONGODB_DB, ONLINE_MONGODB_COLLECTION
+    ONLINE_MONGODB_DB, ONLINE_MONGODB_COLLECTION, ONLINE_MONGODB_USERNAME,\
+    ONLINE_MONGODB_PASSWORD
 
 # Scrapy settings for movie_spider project
 #
@@ -78,6 +79,8 @@ MONGODB_SERVER     = ONLINE_MONGODB_SERVER
 MONGODB_PORT       = ONLINE_MONGODB_PORT
 MONGODB_DB         = ONLINE_MONGODB_DB
 MONGODB_COLLECTION = ONLINE_MONGODB_COLLECTION
+MONGODB_USERNAME   = ONLINE_MONGODB_USERNAME
+MONGODB_PASSWORD   = ONLINE_MONGODB_PASSWORD
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
