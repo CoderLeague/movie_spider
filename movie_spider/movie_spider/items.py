@@ -89,7 +89,7 @@ class VipfreeItem(BaseMovieItem):
         super(VipfreeItem, self).__init__()
         self['sub_source']    =      "weiaipidianyingwang"
         self['site_url']      =      'vip-free.com'
-        self['free_tag']      =      True
+        self['free_tag']      =      "免费"
         self['last_update_time']  =  int(time.time())
 
 
