@@ -6,6 +6,4 @@ from scrapy.cmdline import execute
 
 # execute(['scrapy', 'crawl', 'lili'])
 
-# execute(['scrapy', 'crawl', 'vipfree'])
-
-execute(['scrapy', 'crawl', 'quanmin'])
+execute(['scrapy', 'crawl', 'vipfree'])

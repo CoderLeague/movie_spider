@@ -31,7 +31,7 @@ class VipfreeSpider(scrapy.Spider):
 
         # 找出所有影片链接
         detail_link_list = response.xpath('//div[@class="item"]/ul/div/a/@href').extract() # 获取当前页所有详情链接
-        detail_list      = response.xpath('//div[@class="item"]/ul/div/a').extract()       # 获取当前页所有详情信息
+        detail_list      = response.xpath('//div[@class="item"]/ul/div/a').extract()       # 获取当前页所有详情链接
              
         for detail_link, detail in zip(detail_link_list, detail_list):
             yield scrapy.Request(url = self.base_domain + detail_link[1:],
