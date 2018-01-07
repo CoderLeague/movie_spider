@@ -1,32 +1,32 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from movie_spider.common import logger
-from movie_spider.items import VipfreeItem
 from bs4 import BeautifulSoup
+from movie_spider.items import QuanminItem
 
 headers = {'User-Agent'      : 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Mobile Safari/537.36',
             'Accept'         : 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
             'Accept-Encoding': 'gzip, deflate, br',
-            'Referer'        : 'http://vip-free.com'}
+            'Referer'        : 'http://www.anyunjun.cn/'}
 
-class VipfreeSpider(scrapy.Spider):
-    name = 'vipfree'
-    allowed_domains = ['vip-free.com']
-    base_domain = 'http://vip-free.com'
+class QuanminSpider(scrapy.Spider):
+    name = 'quanmin'
+    allowed_domains = ['www.anyunjun.cn']
+    base_domain = 'http://www.anyunjun.cn'
     start_urls = [
-        'http://vip-free.com/movie.php?m=/dianying/list.php?cat=all&pageno=1',  # 最新电影 第一页
+        'http://www.anyunjun.cn/'
         ]
-
 
     def parse(self, response):
         # 只执行一次，解析起始路径 start_urls
         
-        logger.info(u'开始解析')
+        logger.info(u'开始解析全民影院的视频信息')
         for url in self.start_urls:
             yield scrapy.Request(url, headers=headers, callback=self.sub_parse)
 
     def sub_parse(self, response):
+        
         # 分页执行
 
         # 找出所有影片链接
@@ -65,7 +65,7 @@ class VipfreeSpider(scrapy.Spider):
             }
         video_src_list = response.xpath('//*[@id="playlist1"]/ul/li').extract()
         
-        item = VipfreeItem()
+        item = QuanminItem()
         # 站内唯一标识
         item['item_id']       = response.url.split('/')[-1].split('.')[-2]
         # 影片标题

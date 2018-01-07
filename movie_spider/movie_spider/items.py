@@ -9,16 +9,21 @@ import scrapy
 import time
 
 
-class MovieSpiderItem(scrapy.Item):
+class CollectipsIpItem(scrapy.Item):
     """
-    电影的基本信息
+    系统自动生成
     """
-    pass
+    IP              = scrapy.Field()
+    PORT            = scrapy.Field()
+    POSITION        = scrapy.Field()
+    TYPE            = scrapy.Field()
+    SPEED           = scrapy.Field()
+    LAST_CHECK_TIME = scrapy.Field()
 
 
-class BaseMovieItem(MovieSpiderItem):
+class BaseMovieItem(scrapy.Item):
     """
-    基本赚取
+    基本抓取
     """
     source           = scrapy.Field()  #     一级抓取分类
     sub_source       = scrapy.Field()  #     二级抓取分类
@@ -84,7 +89,7 @@ class VipfreeItem(BaseMovieItem):
     """
     唯爱痞电影网
     """
-    
+
     def __init__(self):
         super(VipfreeItem, self).__init__()
         self['sub_source']    =      "weiaipidianyingwang"
@@ -93,23 +98,28 @@ class VipfreeItem(BaseMovieItem):
         self['last_update_time']  =  int(time.time())
 
 
+class QuanminItem(BaseMovieItem):
+    """
+    全民影院
+    """
+    def __init__(self):
+        super(VipfreeItem, self).__init__()
+        self['sub_source']    =      "quanminyingyuan"
+        self['site_url']      =      'www.anyunjun.cn'
+        self['free_tag']      =      "免费"
+        self['last_update_time']  =  int(time.time())
+
+
 class Liliyy123Item(BaseMovieItem):
     """
     莉莉影院
     """
-    
-    alias     = scrapy.Field()  # 别名
-    cover_url = scrapy.Field()  # 封面链接
-    play_url  = scrapy.Field()  # 播放链接
-
-
-class CollectipsIpItem(scrapy.Item):
-    IP              = scrapy.Field()
-    PORT            = scrapy.Field()
-    POSITION        = scrapy.Field()
-    TYPE            = scrapy.Field()
-    SPEED           = scrapy.Field()
-    LAST_CHECK_TIME = scrapy.Field()
+    def __init__(self):
+        super(VipfreeItem, self).__init__()
+        self['sub_source']    =      "liliyingshi"
+        self['site_url']      =      'liliyy123.com'
+        self['free_tag']      =      "免费"
+        self['last_update_time']  =  int(time.time())
 
 
 class Vip1905Item(scrapy.Item):
