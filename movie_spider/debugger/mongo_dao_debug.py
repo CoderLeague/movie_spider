@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-'''
-@author: codenewman
-'''
+# 
+# @author: codenewman
+# 
+
 from dao.mongo_dao import get_mongo
 
 mongo = get_mongo()
