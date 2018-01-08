@@ -103,7 +103,7 @@ class QuanminItem(BaseMovieItem):
     全民影院
     """
     def __init__(self):
-        super(VipfreeItem, self).__init__()
+        super(QuanminItem, self).__init__()
         self['sub_source']    =      "quanminyingyuan"
         self['site_url']      =      'www.anyunjun.cn'
         self['free_tag']      =      "免费"
