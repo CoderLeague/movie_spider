@@ -12,15 +12,15 @@
 import logging
 import os
 import sys
-from configure.setting import IMAGE_ROOT
 import urllib
-from PIL import Image
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, base_dir)
 
+from PIL import Image
 from toolkit import logkit
 from dao import mongo_dao
+from configure.setting import IMAGE_ROOT
 
 # 引入多线程日志
 logger = logkit.get_logger('images_loader', log_level=logging.INFO, print_level=logging.ERROR)
