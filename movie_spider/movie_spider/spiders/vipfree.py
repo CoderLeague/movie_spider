@@ -59,9 +59,9 @@ class VipfreeSpider(scrapy.Spider):
         soup = BeautifulSoup(detail, "lxml")
         values = soup.find('a')
         cover_image = {
-            "img"   : values['src'],
-            "width" : 0,
-            "heigh" : 0
+            "img"    : values['src'],
+            "width"  : 0,
+            "height" : 0
             }
         video_src_list = response.xpath('//*[@id="playlist1"]/ul/li').extract()
         
