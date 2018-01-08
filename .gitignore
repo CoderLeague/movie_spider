@@ -22,3 +22,5 @@ movie_spider/\.pydevproject
 movie_spider/\.settings/
 
 movie_spider/cache/
+
+movie_spider/data/images/

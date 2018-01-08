@@ -40,7 +40,7 @@ class MongoDao(MongoClient):
         '''
         初始化
         '''
-        logger.info (u'初始化mongo单例')
+        logger.info (u'初始化mongo单例完成')
         self.init_connection()
 
     def init_connection(self):
