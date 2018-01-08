@@ -39,18 +39,17 @@ class QuanminSpider(scrapy.Spider):
 
 
         # 寻找下一页按钮
-#         next_page_list = response.xpath('//div[@class="paging"]').extract()
-#          
-#         for button_item in next_page_list:
-#             soup = BeautifulSoup(button_item, "lxml")
-#             link_list = soup.findAll('a')
-#              
-#             for tag_a in link_list:
-#                 print(tag_a.text)
-#                 if u'下一页' in tag_a.text :
-#                     link = self.base_domain + tag_a['href']
-#                     logger.info(u"下一页链接: %s" % link)
-#                     yield scrapy.Request(url = link, headers=headers, callback=self.parse)
+        next_page_list = response.xpath('//div[@class="paging"]').extract()
+          
+        for button_item in next_page_list:
+            soup = BeautifulSoup(button_item, "lxml")
+            link_list = soup.findAll('a')
+              
+            for tag_a in link_list:
+                if u'下一页' in tag_a.text :
+                    link = self.base_domain + tag_a['href']
+                    logger.info(u"下一页链接: %s" % link)
+                    yield scrapy.Request(url = link, headers=headers, callback=self.parse)
 
 
     def item_parse(self, response):
