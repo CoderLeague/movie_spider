@@ -33,10 +33,12 @@ class QuanminSpider(scrapy.Spider):
             yield scrapy.Request(url = detail_link,
                                  meta={'detail':detail},
                                  headers=headers,
-                                 callback=self.item_parse)  # 解析单页页面
-            
-            break
+                                 callback=self.item_parse)  # 解析单页页
 
+
+#         if detail_link_list or len(detail_link_list) == 0:
+#             # 下一页按钮一直会在, 但是可能只有广告, 这里针对电影数做个判断
+#             return
 
         # 寻找下一页按钮
         next_page_list = response.xpath('//div[@class="paging"]').extract()
