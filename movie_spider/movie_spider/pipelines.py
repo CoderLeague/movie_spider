@@ -8,7 +8,7 @@
 import pymongo
 from scrapy.conf import settings
 from scrapy.exceptions import DropItem
-from scrapy import log
+# from scrapy import log
 from movie_spider.common import logger
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy import Request
@@ -41,8 +41,8 @@ class MongoDBPipeline(object):
                 raise DropItem('Missing{0}!'.format(data))
         if valid:
             self.collection.insert(dict(item))
-            log.msg('question added to mongodb database!',
-                    level=log.DEBUG,spider=spider)
+#             log.msg('question added to mongodb database!',
+#                     level=log.DEBUG,spider=spider)
             
         logger.info(u'存入数据成功')
         return item
