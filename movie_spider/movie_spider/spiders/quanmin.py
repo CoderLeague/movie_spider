@@ -10,6 +10,8 @@ headers = {'User-Agent'      : 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 1
             'Accept-Encoding': 'gzip, deflate, br',
             'Referer'        : 'http://www.anyunjun.cn/'}
 
+MAX_PAGE_INDEX = 40
+
 class QuanminSpider(scrapy.Spider):
     name = 'quanmin'
     allowed_domains = ['www.anyunjun.cn']
@@ -18,6 +20,8 @@ class QuanminSpider(scrapy.Spider):
 #         'http://www.anyunjun.cn/list/c/dianying/cat/all/area/all/rank/createtime.html',  # 最新电影
         'http://www.anyunjun.cn/list/c/dianying/cat/all/area/all.html',                  # 全部电影
         ]
+
+    page_count = 0
 
     def parse(self, response):
         #先，解析起始路径 start_urls
@@ -36,6 +40,11 @@ class QuanminSpider(scrapy.Spider):
                                  headers=headers,
                                  callback=self.item_parse)  # 解析单页页
 
+
+        if self.page_count > MAX_PAGE_INDEX :
+            return
+        else:
+            self.page_count += 1
 
 #         if detail_link_list or len(detail_link_list) == 0:
 #             # 下一页按钮一直会在, 但是可能只有广告, 这里针对电影数做个判断
