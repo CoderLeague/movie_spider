@@ -15,7 +15,8 @@ class QuanminSpider(scrapy.Spider):
     allowed_domains = ['www.anyunjun.cn']
     base_domain = 'http://www.anyunjun.cn'
     start_urls = [
-        'http://www.anyunjun.cn/list/c/dianying/cat/all/area/all/rank/createtime.html'  # 最新电影
+#         'http://www.anyunjun.cn/list/c/dianying/cat/all/area/all/rank/createtime.html',  # 最新电影
+        'http://www.anyunjun.cn/list/c/dianying/cat/all/area/all.html',                  # 全部电影
         ]
 
     def parse(self, response):
