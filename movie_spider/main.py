@@ -17,9 +17,7 @@ from movie_spider.common import logger
 # 小马影院
 execute(['scrapy', 'crawl', 'xiaoma'])
 
-
-
 # 下载图片, 更新相对链接
 rest_spider.images_loader.master_main()
-
+ 
 logger.info(u'全部任务执行完毕')
