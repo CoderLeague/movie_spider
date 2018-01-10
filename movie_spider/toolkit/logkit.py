@@ -11,6 +11,9 @@ from cloghandler import ConcurrentRotatingFileHandler
 
 logger_dict = {}
 
+# 创建logger样例
+# logger = get_logger(logger_name = 'test', log_level=logging.WARNING, print_level=logging.WARNING)
+
 def get_logger(logger_name, log_level=logging.WARNING, print_level=logging.WARNING):
     """
     获取日志操作对象
