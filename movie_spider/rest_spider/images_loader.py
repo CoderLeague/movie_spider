@@ -13,6 +13,7 @@ import logging
 import os
 import sys
 import urllib
+import traceback
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, base_dir)
@@ -87,16 +88,19 @@ def get_web_images(db_image_info):
         pull_image(img[u'img'], save_path)
         logger.info(save_path)
         
-        # 获取图片尺寸
-        f_img  = Image.open(save_path)
-        width  = f_img.size[0]
-        height = f_img.size[1]
+        try:
+            # 获取图片尺寸
+            f_img  = Image.open(save_path)
+            width  = f_img.size[0]
+            height = f_img.size[1]
         
-        # 将本地URL更新至mongo缓存
-        img[u'img']    = relative_path
-        img[u'width']  = width
-        img[u'height'] = height
-    
+            # 将本地URL更新至mongo缓存
+            img[u'img']    = relative_path
+            img[u'width']  = width
+            img[u'height'] = height
+        except:
+            logger.error(traceback.format_exc())
+
     return db_image_info
 
 
