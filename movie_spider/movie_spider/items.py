@@ -110,6 +110,18 @@ class QuanminItem(BaseMovieItem):
         self['last_update_time']  =  int(time.time())
 
 
+class XiaomaItem(BaseMovieItem):
+    """
+    小马影院
+    """
+    def __init__(self):
+        super(XiaomaItem, self).__init__()
+        self['sub_source']    =      "xiaomayingyuan"
+        self['site_url']      =      'efx6.cn'
+        self['free_tag']      =      "免费"
+        self['last_update_time']  =  int(time.time())
+
+
 class Liliyy123Item(BaseMovieItem):
     """
     莉莉影院
@@ -121,13 +133,3 @@ class Liliyy123Item(BaseMovieItem):
         self['free_tag']      =      "免费"
         self['last_update_time']  =  int(time.time())
 
-
-class Vip1905Item(scrapy.Item):
-    name = scrapy.Field()  # 名字
-    data_id = scrapy.Field()  # 数据ID
-    score = scrapy.Field()  # 评分
-    url = scrapy.Field()  # 播放链接
-    intro = scrapy.Field()  # 介绍
-    tag_hover = scrapy.Field()  # 标签
-    protagonist = scrapy.Field()  # 主演
-    plot = scrapy.Field()  # 剧情
