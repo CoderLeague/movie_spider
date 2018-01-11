@@ -11,7 +11,9 @@ from movie_spider.common import logger
 
 # execute(['scrapy', 'crawl', 'vipfree'])
 
-execute(['scrapy', 'crawl', 'quanmin'])
+# execute(['scrapy', 'crawl', 'quanmin'])
+
+execute(['scrapy', 'crawl', 'zxkk'])
 
 
 

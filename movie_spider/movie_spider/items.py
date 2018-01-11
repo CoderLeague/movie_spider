@@ -110,6 +110,18 @@ class QuanminItem(BaseMovieItem):
         self['last_update_time']  =  int(time.time())
 
 
+class ZxkkItem(BaseMovieItem):
+    """
+    全民影院
+    """
+    def __init__(self):
+        super(ZxkkItem, self).__init__()
+        self['sub_source']    =      "zaixiankankan"
+        self['site_url']      =      'zxkk5.com'
+        self['free_tag']      =      "免费"
+        self['last_update_time']  =  int(time.time())
+
+
 class Liliyy123Item(BaseMovieItem):
     """
     莉莉影院
