@@ -73,14 +73,14 @@ class BaseMovieItem(scrapy.Item):
         self['cover_img_cnt'] =      ""
         self['sub_title']     =      ""
         self['publish_date']  =      0
-        self['last_update_time']  =  0
+        self['last_update_time']  =  int(time.time())
         self['video_src_cnt'] =      ""
         self['score']         =      ""
         self['content_url']   =      ""
         self['lang']          =      ""
         self['region']        =      ""
-        self['type']          =      ""
-        self['sub_type']      =      "video"
+        self['type']          =      "video"
+        self['sub_type']      =      ""
         self['channel']       =      "movie"
         self['sub_channel']   =      ""
 
@@ -95,7 +95,6 @@ class VipfreeItem(BaseMovieItem):
         self['sub_source']    =      "weiaipidianyingwang"
         self['site_url']      =      'vip-free.com'
         self['free_tag']      =      "免费"
-        self['last_update_time']  =  int(time.time())
 
 
 class QuanminItem(BaseMovieItem):
@@ -107,7 +106,28 @@ class QuanminItem(BaseMovieItem):
         self['sub_source']    =      "quanminyingyuan"
         self['site_url']      =      'www.anyunjun.cn'
         self['free_tag']      =      "免费"
-        self['last_update_time']  =  int(time.time())
+
+
+class XiaomaItem(BaseMovieItem):
+    """
+    小马影院
+    """
+    def __init__(self):
+        super(XiaomaItem, self).__init__()
+        self['sub_source']    =      "xiaomayingyuan"
+        self['site_url']      =      'efx6.cn'
+        self['free_tag']      =      "免费"
+
+
+class ZxkkItem(BaseMovieItem):
+    """
+    在线看看
+    """
+    def __init__(self):
+        super(ZxkkItem, self).__init__()
+        self['sub_source']    =      "zaixiankankan"
+        self['site_url']      =      'zxkk5.com'
+        self['free_tag']      =      "免费"
 
 
 class Liliyy123Item(BaseMovieItem):
@@ -119,15 +139,4 @@ class Liliyy123Item(BaseMovieItem):
         self['sub_source']    =      "liliyingshi"
         self['site_url']      =      'liliyy123.com'
         self['free_tag']      =      "免费"
-        self['last_update_time']  =  int(time.time())
 
-
-class Vip1905Item(scrapy.Item):
-    name = scrapy.Field()  # 名字
-    data_id = scrapy.Field()  # 数据ID
-    score = scrapy.Field()  # 评分
-    url = scrapy.Field()  # 播放链接
-    intro = scrapy.Field()  # 介绍
-    tag_hover = scrapy.Field()  # 标签
-    protagonist = scrapy.Field()  # 主演
-    plot = scrapy.Field()  # 剧情

@@ -14,7 +14,8 @@ sys.path.insert(0, base_dir)
 
 if __name__ == '__main__':
     
-    json_add = os.path.join(base_dir, 'data', 'movie_url.json')
+#     json_add = os.path.join(base_dir, 'data', 'movie_url.json')
+    json_add = os.path.join(base_dir, 'data', 'sub_channel.json')
     print json_add
     
     with open(json_add) as f:
