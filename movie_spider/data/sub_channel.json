@@ -1,0 +1,18 @@
+{
+    "comedy"     : "喜剧片",
+    "tragedy"    : "悲剧片",
+    "love"       : "爱情片",
+    "action"     : "动作片",
+    "shoot"      : "枪战片",
+    "crime"      : "犯罪片",
+    "thriller"   : "惊悚片",
+    "horror"     : "恐怖片",
+    "suspense"   : "悬疑片",
+    "animation"  : "动画片",
+    "family"     : "家庭片",
+    "fantasy"    : "奇幻片",
+    "magic"      : "魔幻片",
+    "science"    : "科幻片",
+    "war"        : "战争片",
+    "teenpic"    : "青春片"
+}

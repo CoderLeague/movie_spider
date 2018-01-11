@@ -20,7 +20,7 @@ class XiaomaSpider(scrapy.Spider):
 
 
     def __init__(self):
-        super(XiaomaSpider, self).__init__(headers=headers)
+        super(XiaomaSpider, self).__init__()
         
         # 初始化 start_urls, 生成电影的地址
         movie_root = u'http://efx6.cn/movie.php?m=http://www.360kan.com/dianying/list.php?cat=all%26pageno={pageno}'
@@ -43,7 +43,8 @@ class XiaomaSpider(scrapy.Spider):
             url = self.base_domain + detail_link[1:]
             logger.info(u'影片播放页 传参 %s' % url)
             yield scrapy.Request(url = url,
-                                meta={'detail':detail},
+                                 headers=headers,
+                                 meta={'detail':detail},
                                  callback=self.item_parse)  # 解析播放页
 
 
