@@ -83,12 +83,12 @@ def get_web_images(db_image_info):
             img[u'img'].replace(' ','').split(u'.')[-1],
             ))
         save_path, relative_path = get_file_path(db_image_info, file_name)
-        
-        # 下载图片
-        pull_image(img[u'img'], save_path)
-        logger.info(save_path)
-        
+
         try:
+            # 下载图片
+            pull_image(img[u'img'], save_path)
+            logger.info(save_path)
+        
             # 获取图片尺寸
             f_img  = Image.open(save_path)
             width  = f_img.size[0]
