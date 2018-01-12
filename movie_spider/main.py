@@ -20,10 +20,10 @@ from rest_spider import images_loader
 # execute(['scrapy', 'crawl', 'quanmin'])
 
 # 小马影院
-# execute(['scrapy', 'crawl', 'xiaoma'])
+execute(['scrapy', 'crawl', 'xiaoma'])
 
 # 在线看看
-execute(['scrapy', 'crawl', 'zxkk'])
+# execute(['scrapy', 'crawl', 'zxkk'])
 
 # 下载图片, 更新相对链接
 images_loader.master_main()
