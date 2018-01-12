@@ -24,3 +24,11 @@ movie_spider/\.settings/
 movie_spider/cache/
 
 movie_spider/data/images/
+
+movie_spider/data/online_movie_info\.json
+
+documents/电影覆盖统计\.xls
+
+movie_spider/data/move_name_from_db\.txt
+
+movie_spider/data/movie_name\.txt
