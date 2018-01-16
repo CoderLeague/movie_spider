@@ -74,6 +74,8 @@ def get_web_images(db_image_info):
     获取web图片, 保存至本地, 更细mongo
     """
     count = 1
+    result = []
+    
     for img in db_image_info[u'cover_images']:
         if img[u'img'].startswith('http') == False:
             continue
@@ -98,12 +100,12 @@ def get_web_images(db_image_info):
             img[u'img']    = relative_path
             img[u'width']  = width
             img[u'height'] = height
+            
+            result.append(img)
         except:
             logger.error(traceback.format_exc())
-            
-            return []
 
-    return db_image_info
+    return result
 
 
 def update_mongo(update_image_doc):
