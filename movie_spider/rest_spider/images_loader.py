@@ -100,6 +100,8 @@ def get_web_images(db_image_info):
             img[u'height'] = height
         except:
             logger.error(traceback.format_exc())
+            
+            return []
 
     return db_image_info
 
