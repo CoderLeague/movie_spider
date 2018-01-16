@@ -111,7 +111,7 @@ def update_mongo(update_image_doc):
     更新数据库
     """
     collect = mongo_dao.get_mongo().get_collection()
-    logger.info(u'保存图片数据: %s' % (update_image_doc[u'cover_images']))
+    logger.info(u'正在保存图片数据')
 
     collect.update({u'_id' : update_image_doc[u'_id']}, 
                    update_image_doc,
