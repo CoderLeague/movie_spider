@@ -4,8 +4,10 @@ ConcurrentLogHandler
 pymongo
 pyspider
 Scrapy
+selenium
 beautifulsoup4
 bs4
+fake-useragent
 
 # 图像处理
 # conda install PIL

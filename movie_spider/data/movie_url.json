@@ -43,7 +43,13 @@
 	},
 	{
 		"id"     : "7",
-		"name"   : "战地影院s",
+		"name"   : "战地影院",
+		"domain" : "zhandi.cc" ,
+		"url"    : "http://www.zhandi.cc"
+	},
+	{
+		"id"     : "8",
+		"name"   : "战地影院",
 		"domain" : "zhandi.cc" ,
 		"url"    : "http://www.zhandi.cc"
 	}

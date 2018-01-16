@@ -24,7 +24,8 @@ ONLINE_MONGODB_USERNAME   = "liquid"
 ONLINE_MONGODB_PASSWORD   = "n3tw0rk"
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-     
+
+DEBUG = True
 # 测试数据库配置信息
 ONLINE_MONGODB_SERVER     = "127.0.0.1"
 ONLINE_MONGODB_PORT       = 27017
