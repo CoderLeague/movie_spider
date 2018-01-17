@@ -21,7 +21,6 @@ sys.path.insert(0, base_dir)
 
 from PIL import Image
 from toolkit import logkit
-from dao import mongo_dao
 from configure.setting import IMAGE_ROOT, ONLINE_MONGODB_SERVER,\
     ONLINE_MONGODB_PORT, ONLINE_MONGODB_USERNAME, ONLINE_MONGODB_PASSWORD,\
     ONLINE_MONGODB_COLLECTION, ONLINE_WECHAT_COLLECTION
