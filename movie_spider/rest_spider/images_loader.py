@@ -104,9 +104,10 @@ class ImageDownloader(object):
         result = []
         
         for img in image_list:
+
             if img[u'img'].startswith('http') == False:
                 continue
-            
+
             file_name = u'.'.join((
                 db_image_doc[u'item_id'] + u'_' + str(count),
                 img[u'img'].replace(' ','').split(u'.')[-1],
@@ -208,8 +209,8 @@ class WechatImageDownloader(ImageDownloader):
 
 
 if __name__ == '__main__':
-#     image_worker = ImageDownloader()  # M站图片下载
-#     image_worker.master_main()
-    
-    wechat_image_worker = WechatImageDownloader(collection_name=ONLINE_WECHAT_COLLECTION)  # 微信图片下载
-    wechat_image_worker.master_main()
+     image_worker = ImageDownloader()  # M站图片下载
+     image_worker.master_main()
+
+#    wechat_image_worker = WechatImageDownloader(collection_name=ONLINE_WECHAT_COLLECTION)  # 微信图片下载
+#    wechat_image_worker.master_main()
