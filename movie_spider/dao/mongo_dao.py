@@ -14,7 +14,7 @@ import logging
 
 
 # 设置多线程日志
-logger = logkit.get_logger(logger_name='mongo_dao', log_level=logging.DEBUG, print_level=logging.DEBUG)
+logger = logkit.get_logger(logger_name='mongo_dao', log_level=logging.DEBUG, print_level=logging.ERROR)
 
 # 设置mongo单例链接对象
 BASE_MONGO_CLIENT = None
@@ -28,30 +28,45 @@ def get_mongo():
     if BASE_MONGO_CLIENT == None:
         BASE_MONGO_CLIENT = MongoDao()
 
+    BASE_MONGO_CLIENT.info()
     return BASE_MONGO_CLIENT
 
 class MongoDao(MongoClient):
     '''
     [重写] MongoDB
-    设置为单例
     '''
 
-    def __init__(self):
-        '''
-        初始化
-        '''
-        logger.info (u'初始化mongo单例完成')
-        self.init_connection()
-
-    def init_connection(self):
-        """
-        初始化连接
-        """
-        super(MongoDao, self).__init__(
+    def __init__(self,
                 host     = ONLINE_MONGODB_SERVER,
                 port     = ONLINE_MONGODB_PORT,
                 username = ONLINE_MONGODB_USERNAME,
                 password = ONLINE_MONGODB_PASSWORD
+                ):
+        '''
+        初始化
+        '''
+        self.init_connection(
+            host     = host,
+            port     = port,
+            username = username,
+            password = password
+            )
+        logger.info (u'初始化mongo单例完成')
+
+    def init_connection(self,
+                host     = ONLINE_MONGODB_SERVER,
+                port     = ONLINE_MONGODB_PORT,
+                username = ONLINE_MONGODB_USERNAME,
+                password = ONLINE_MONGODB_PASSWORD
+            ):
+        """
+        初始化连接
+        """
+        super(MongoDao, self).__init__(
+            host     = host,
+            port     = port,
+            username = username,
+            password = password
             )
         self.static_mongo = self
 

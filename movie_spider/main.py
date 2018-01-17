@@ -24,8 +24,5 @@ from rest_spider import images_loader
 
 # 在线看看
 execute(['scrapy', 'crawl', 'zxkk'])
-
-# 下载图片, 更新相对链接
-images_loader.master_main()
  
 logger.info(u'全部任务执行完毕')
