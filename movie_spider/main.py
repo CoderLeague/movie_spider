@@ -14,13 +14,13 @@ from rest_spider import images_loader
 # execute(['scrapy', 'crawl', 'lili'])
 
 # 唯爱痞电影网
-# execute(['scrapy', 'crawl', 'vipfree'])
+execute(['scrapy', 'crawl', 'vipfree'])
 
 # 全民影院
-# execute(['scrapy', 'crawl', 'quanmin'])
+execute(['scrapy', 'crawl', 'quanmin'])
 
 # 小马影院
-# execute(['scrapy', 'crawl', 'xiaoma'])
+execute(['scrapy', 'crawl', 'xiaoma'])
 
 # 在线看看
 execute(['scrapy', 'crawl', 'zxkk'])
