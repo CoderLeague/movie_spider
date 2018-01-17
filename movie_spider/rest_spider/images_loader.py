@@ -104,8 +104,9 @@ class ImageDownloader(object):
         result = []
         
         for img in image_list:
-
-            if img[u'img'].startswith('http') == False:
+            logger.info(img[u'img'])
+            if img[u'img'].startswith('http') == False :
+                result.append(img)
                 continue
 
             file_name = u'.'.join((
@@ -177,6 +178,10 @@ class WechatImageDownloader(ImageDownloader):
         result = []
 
         for img in db_image_info[u'cover_images']:
+
+            logger.info(img[u'img'])
+
+
             if img[u'img'].startswith('http') == False:
                 continue
             
