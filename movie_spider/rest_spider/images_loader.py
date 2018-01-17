@@ -14,11 +14,11 @@ import os
 import sys
 import urllib
 import traceback
-from dao.mongo_dao import MongoDao
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, base_dir)
 
+from dao.mongo_dao import MongoDao
 from PIL import Image
 from toolkit import logkit
 from configure.setting import IMAGE_ROOT, ONLINE_MONGODB_SERVER,\
